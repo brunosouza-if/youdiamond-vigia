@@ -43,7 +43,8 @@ for c in CANAIS:
                 achados.append((post, msg)); break
 _tf=os.path.join(os.path.dirname(__file__),"..","memoria","tg_bot_token.txt")
 tok = os.environ.get("TG_TOKEN") or (open(_tf).read().strip() if os.path.exists(_tf) else None)
-chat = os.environ.get("TG_CHAT") or "-5259574389"
+tok = tok.replace("﻿","").strip() if tok else tok
+chat = (os.environ.get("TG_CHAT") or "-5259574389").replace("﻿","").strip()
 import time
 print("achados:", len(achados), "| vistos:", len(visto))
 for post,a in achados[:8]:
