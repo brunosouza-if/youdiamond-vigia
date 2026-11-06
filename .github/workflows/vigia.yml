@@ -1,9 +1,10 @@
 name: vigia
 on:
-  schedule: [{cron: "*/5 * * * *"}]
+  schedule: [{cron: "3-58/5 * * * *"}]
   workflow_dispatch:
 permissions:
   contents: write
+concurrency: {group: vigia, cancel-in-progress: false}
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -17,4 +18,8 @@ jobs:
           TG_CHAT: ${{ secrets.TG_CHAT }}
       - run: |
           git config user.name vigia && git config user.email vigia@users.noreply.github.com
-          git add vigia_visto.json && (git commit -m "estado" && git pull --rebase -q && git push) || true
+          git add vigia_visto.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "estado"
+          for i in 1 2 3; do git pull --rebase -q -X ours && git push -q && exit 0; sleep 3; done
+          echo "nao conseguiu salvar estado"
