@@ -45,6 +45,7 @@ _tf=os.path.join(os.path.dirname(__file__),"..","memoria","tg_bot_token.txt")
 tok = os.environ.get("TG_TOKEN") or (open(_tf).read().strip() if os.path.exists(_tf) else None)
 chat = os.environ.get("TG_CHAT") or "-5259574389"
 import time
+print("achados:", len(achados), "| vistos:", len(visto))
 for post,a in achados[:8]:
     if not (tok and chat): print(a); continue
     try:
