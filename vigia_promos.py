@@ -33,6 +33,27 @@ def _nota(k, low, m, alvo, venda_shopee):
     n += min(10, 5*sum(1 for s in ("menor pre","hist","cupom","frete gr") if s in low))
     return max(15, min(95, n))
 def _rotulo(n): return "alta" if n >= 75 else "média" if n >= 55 else "baixa"
+_RE_PRECO = r"R\$\s*(\d[\d.]*(?:,\d{1,2})?)"
+def _precos(t):
+    """Preco de compra do produto em primeiro lugar. Ignora parcela ('12x R$ 24,33', 'R$ 24,33/mes'), cupom, frete,
+    cashback e desconto; prefere o valor depois de 'por'/'pix'/'a vista' (promo 'de X por Y'); senao o primeiro R$ do post.
+    Valor menor que 20% do maior e tratado como parcela/cupom e descartado. (06/11: AULA F75 saiu como R$ 24,33 = parcela.)"""
+    low = t.lower()
+    vals = []
+    for m_ in re.finditer(_RE_PRECO, t):
+        a, b = low[max(0, m_.start()-28):m_.start()], low[m_.end():m_.end()+14]
+        if re.search(r"\d+\s*x\s*(de\s*)?$|cupom|frete|cashback|desconto|economi|off\b", a) \
+           or re.search(r"^\s*(/|por|ao)?\s*m[eê]s|^\s*(de|em)?\s*cashback|^\s*(de\s*)?desconto", b):
+            continue
+        v = float(m_.group(1).replace(".", "").replace(",", "."))
+        pref = bool(re.search(r"(por|pix|[àa] vista|agora)\W*$", low[max(0, m_.start()-14):m_.start()]))
+        vals.append((v, pref))
+    if not vals: return []
+    top = max(v for v, _ in vals)
+    vals = [(v, p) for v, p in vals if v >= 0.2*top] or vals
+    pref = [v for v, p in vals if p]
+    return [pref[0] if pref else vals[0][0]] + [v for v, _ in vals]
+
 achados = []
 for c in CANAIS:
     try: pg = get(f"https://t.me/s/{c}")
@@ -40,10 +61,10 @@ for c in CANAIS:
     for post, txt in re.findall(r'data-post="([^"]+)".*?tgme_widget_message_text[^>]*>(.*?)</div>', pg, re.S):
         t = html.unescape(re.sub(r"<[^>]+>", " ", txt)); low = t.lower()
         if post in visto: continue
-        precos = [float(p.replace(".","").replace(",",".")) for p in re.findall(r"R\$\s*(\d[\d.]*(?:,\d{1,2})?)", t)]
+        precos = _precos(t)
         for k, mx in ALVOS.items():
-            if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume", low) and precos and min(precos) <= mx:
-                m = min(precos); vs = _venda(m,'shopee'); vt = _venda(m,'tiktok'); n = _nota(k, low, m, mx, vs)
+            if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume", low) and precos and precos[0] <= mx:
+                m = precos[0]; vs = _venda(m,'shopee'); vt = _venda(m,'tiktok'); n = _nota(k, low, m, mx, vs)
                 br = lambda v: f"R$ {v:,.2f}".replace(",","X").replace(".",",").replace("X",".")
                 msg = "\n".join([html.escape(" ".join(t.split())[:90]),
                                  f"Achado: {br(m)}",
