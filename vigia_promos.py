@@ -3,7 +3,7 @@
 import os, re, json, html, time, datetime, urllib.request, urllib.parse
 CANAIS = ["cjpromos","BenchPromos","Fraguas84Oficial","juaocupons","LaPromotion","souzzatechpromos","placasdevideoparaosbetinha"]
 # palavra-chave -> preco maximo (alvo). Ajustar com a lista_cacada_promos.html
-ALVOS = {"ugreen":45,"f75":260,"aula":260,"easysmx":110,"hyperx":220,"echo dot":260,"gamesir":120,"8bitdo":260,"fifine":200,"controle":150,"gamepad":150,"joystick":150,"cabo":25,"carregador":60,"fone":120,"teclado":200,"mouse":120,"headset":200,"microfone":200,"ssd":300,"placa de v":99999,"rtx":99999,"action figure":60,"fonte":500,"placa m":99999,"processador":99999,"ryzen":99999,"memória":400,"memoria":400,"ddr4":400,"ddr5":600,"monitor":99999,"water cooler":400,"gabinete":300,"rádio":150,"radio":150,"walkie":200,"smartwatch":200,"caixa de som":150,"webcam":150,"roteador":150,"tv box":200,"gtx":99999,"radeon":99999,"nvme":300,"hd externo":300,"powerbank":100,"power bank":100}
+ALVOS = {"ugreen":45,"f75":260,"aula":260,"easysmx":110,"hyperx":220,"echo dot":260,"gamesir":120,"8bitdo":260,"fifine":200,"controle":250,"gamepad":250,"joystick":250,"cabo":25,"carregador":60,"fone":120,"teclado":200,"mouse":120,"headset":200,"microfone":200,"ssd":300,"placa de v":99999,"rtx":99999,"action figure":60,"fonte":500,"placa m":99999,"processador":99999,"ryzen":99999,"memória":400,"memoria":400,"ddr4":400,"ddr5":600,"monitor":99999,"water cooler":400,"gabinete":300,"rádio":150,"radio":150,"walkie":200,"smartwatch":200,"caixa de som":150,"webcam":150,"roteador":150,"tv box":200,"gtx":99999,"radeon":99999,"nvme":300,"hd externo":300,"powerbank":100,"power bank":100}
 # Demanda base por categoria na Shopee (0-100): giro rapido e ticket baixo pontuam mais.
 DEMANDA = {"cabo":85,"carregador":85,"fone":85,"mouse":80,"teclado":75,"headset":75,"controle":75,"gamepad":75,"joystick":75,"ugreen":85,"f75":70,"aula":70,"easysmx":75,"hyperx":75,"echo dot":70,"gamesir":70,"8bitdo":70,"fifine":65,
            "caixa de som":70,"smartwatch":65,"powerbank":70,"power bank":70,"webcam":65,"microfone":65,"ssd":65,"nvme":65,"memória":60,"memoria":60,"ddr4":60,"ddr5":60,"hd externo":60,
@@ -56,7 +56,7 @@ for c in CANAIS:
 tok = (os.environ.get("TG_TOKEN") or "").replace("﻿","").strip()
 chat = (os.environ.get("TG_CHAT") or "-5259574389").replace("﻿","").strip()
 print("achados:", len(achados), "| vistos:", len(visto))
-for post,a in achados[:8]:
+for post,a in achados[:12]:
     if not (tok and chat): print(a); continue
     try:
         get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id":chat,"text":a,"parse_mode":"HTML"}).encode())
