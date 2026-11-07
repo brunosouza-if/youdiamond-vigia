@@ -1,4 +1,6 @@
 name: vigia
+# Cron de 5 min do GitHub pula horas (07/11: 1 run entre 11h10 e 14h30 local). Por isso cada run vive ~5h40
+# rodando o vigia a cada 5 min por dentro; o cron e o gatilho do PC so garantem que sempre haja um run vivo.
 on:
   schedule: [{cron: "3-58/5 * * * *"}]
   workflow_dispatch:
@@ -8,18 +10,22 @@ concurrency: {group: vigia, cancel-in-progress: false}
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: python vigia_promos.py
+      - run: git config user.name vigia && git config user.email vigia@users.noreply.github.com
+      - run: |
+          for i in $(seq 1 68); do
+            python vigia_promos.py || echo "vigia falhou (rodada $i)"
+            git add vigia_visto.json
+            if ! git diff --cached --quiet; then
+              git commit -qm "estado"
+              for t in 1 2 3; do git pull --rebase -q -X ours && git push -q && break; sleep 3; done
+            fi
+            sleep 300
+          done
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT: ${{ secrets.TG_CHAT }}
-      - run: |
-          git config user.name vigia && git config user.email vigia@users.noreply.github.com
-          git add vigia_visto.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "estado"
-          for i in 1 2 3; do git pull --rebase -q -X ours && git push -q && exit 0; sleep 3; done
-          echo "nao conseguiu salvar estado"
