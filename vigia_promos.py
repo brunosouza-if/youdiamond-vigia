@@ -10,6 +10,9 @@ DEMANDA = {"cabo":85,"carregador":85,"fone":85,"mouse":80,"teclado":75,"headset"
            "action figure":55,"tv box":55,"roteador":55,"rádio":50,"radio":50,"walkie":50,"monitor":45,"placa de v":45,"rtx":45,"gtx":45,"radeon":45,"processador":45,"ryzen":45,"fonte":50,"gabinete":45,"water cooler":45,"placa m":45,"tv ":60,"smart tv":60,"televis":60,"notebook":55,"celular":65,"smartphone":65,"iphone":65,"galaxy":65,"xiaomi":70,"redmi":70,"poco":65,"tablet":55,"ipad":55,"console":55,"playstation":55,"ps5":55,"xbox":50,"nintendo":55,"air fryer":70,"airfryer":70,"alexa":70,"kindle":55,"soundbar":50,"projetor":50,"cadeira gamer":45,"impressora":45,"carregador port":75,"hub usb":70,"suporte":60}
 MARCAS = ["ugreen","hyperx","baseus","logitech","redragon","kingston","samsung","xiaomi","jbl","echo","amazon","aula","8bitdo","gamesir","fifine","razer","sandisk","wd ","crucial","anker","tp-link","intelbras"]
 VISTO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vigia_visto.json")
+# O que foi de fato mandado ao grupo (os 200 ultimos): o painel do Jarvis mostra daqui, o visto so guarda ids.
+ENVIADOS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vigia_enviados.json")
+ENVIADOS_MAX = 200
 visto = set(json.load(open(VISTO))) if os.path.exists(VISTO) else set()
 def get(u, data=None): return urllib.request.urlopen(urllib.request.Request(u, data=data, headers={"User-Agent":"Mozilla/5.0"}), timeout=20).read().decode("utf-8","ignore")
 
@@ -73,14 +76,22 @@ for c in CANAIS:
                                  f"Facilidade de venda: <b>{n}%</b> ({_rotulo(n)})",
                                  f"(taxas incluídas, lucro líquido {int(LUCRO*100)}%)",
                                  f"https://t.me/{post}"])
-                achados.append((post, msg)); break
+                info = {"post": post, "titulo": " ".join(t.split())[:90], "achado": round(m, 2),
+                        "shopee": round(vs, 2), "tiktok": round(vt, 2), "nota": n, "alvo": k}
+                achados.append((post, msg, info)); break
 tok = (os.environ.get("TG_TOKEN") or "").replace("﻿","").strip()
 chat = (os.environ.get("TG_CHAT") or "-5259574389").replace("﻿","").strip()
 print("achados:", len(achados), "| vistos:", len(visto))
-for post,a in achados[:12]:
+def _registrar_envio(info):
+    try: env = json.load(open(ENVIADOS, encoding="utf-8")) if os.path.exists(ENVIADOS) else []
+    except ValueError: env = []
+    info = dict(info, quando=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"))
+    env = (env + [info])[-ENVIADOS_MAX:]
+    json.dump(env, open(ENVIADOS, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+for post,a,info in achados[:12]:
     if not (tok and chat): print(a); continue
     try:
         get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id":chat,"text":a,"parse_mode":"HTML"}).encode())
-        visto.add(post); json.dump(sorted(visto), open(VISTO,"w")); time.sleep(4)
+        visto.add(post); json.dump(sorted(visto), open(VISTO,"w")); _registrar_envio(info); time.sleep(4)
     except Exception as e:
         print("erro envio", e); break

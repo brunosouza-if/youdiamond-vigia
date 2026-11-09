@@ -19,7 +19,7 @@ jobs:
       - run: |
           for i in $(seq 1 68); do
             python vigia_promos.py || echo "vigia falhou (rodada $i)"
-            git add vigia_visto.json
+            git add vigia_visto.json vigia_enviados.json 2>/dev/null || git add vigia_visto.json
             if ! git diff --cached --quiet; then
               git commit -qm "estado"
               for t in 1 2 3; do git pull --rebase -q -X ours && git push -q && break; sleep 3; done
