@@ -1,125 +1,5 @@
 [
 {
-"post": "souzzatechpromos/270032",
-"titulo": "🚨 Processador AMD Ryzen 7 5700X, 3,4 GHz, 8 núcleos, 16 threads, cache de 32 MB, soquete A",
-"achado": 965.0,
-"shopee": 1436.23,
-"tiktok": 1181.71,
-"nota": 50,
-"alvo": "processador",
-"quando": "2026-11-11T02:41:15+00:00"
-},
-{
-"post": "cjpromos/78743",
-"titulo": "Pichau Kit upgrade, AMD Ryzen 5 9600X, A620M DDR5 R$ 999 https://www.pichau.com.br/pichau-",
-"achado": 999.0,
-"shopee": 1485.51,
-"tiktok": 1223.17,
-"nota": 45,
-"alvo": "ryzen",
-"quando": "2026-11-11T02:46:28+00:00"
-},
-{
-"post": "BenchPromos/28250",
-"titulo": "🔥 Teclado Mecânico Com Fio EPOMAKER EK68, Black Gold - R$ 152,99 🔥 #anúncio 🎟 Cupom: EPO15",
-"achado": 152.99,
-"shopee": 259.41,
-"tiktok": 191.45,
-"nota": 85,
-"alvo": "teclado",
-"quando": "2026-11-11T02:46:32+00:00"
-},
-{
-"post": "LaPromotion/116751",
-"titulo": "🔥 Pichau Kit upgrade, AMD Ryzen 5 9600X, A620M DDR5 Preço: R$ 999 https://p.lapromotion.co",
-"achado": 999.0,
-"shopee": 1485.51,
-"tiktok": 1223.17,
-"nota": 45,
-"alvo": "ryzen",
-"quando": "2026-11-11T02:46:37+00:00"
-},
-{
-"post": "souzzatechpromos/270039",
-"titulo": "🚨 Smart TV PRO LG 55'' 4K Ultra HD AI 55UN85C 💵 R$ 2.085,00 no Pix 🎟 Cupom: MELHORCUPOM ht",
-"achado": 2085.0,
-"shopee": 3059.42,
-"tiktok": 2547.56,
-"nota": 65,
-"alvo": "tv ",
-"quando": "2026-11-11T02:46:43+00:00"
-},
-{
-"post": "souzzatechpromos/270040",
-"titulo": "🚨 Smart Tv LG 50'' 4k Ultra Hd Nano Ai Magic Webos 26 50un85 💵 R$ 1.963 no Pix 🎟 Cupom: ME",
-"achado": 1963.0,
-"shopee": 2882.61,
-"tiktok": 2398.78,
-"nota": 65,
-"alvo": "tv ",
-"quando": "2026-11-11T02:46:47+00:00"
-},
-{
-"post": "LaPromotion/116752",
-"titulo": "🔥 Pichau Kit upgrade, AMD Ryzen 7 8700F, B850M DDR5 Preço: R$ 1349 https://p.lapromotion.c",
-"achado": 1349.0,
-"shopee": 1992.75,
-"tiktok": 1650.0,
-"nota": 45,
-"alvo": "ryzen",
-"quando": "2026-11-11T02:57:07+00:00"
-},
-{
-"post": "souzzatechpromos/270043",
-"titulo": "🚨 Sanduicheira Elétrica Mallory Mickey Mouse Funny Plates – Placas com Design, Superfície ",
-"achado": 82.8,
-"shopee": 148.99,
-"tiktok": 105.85,
-"nota": 95,
-"alvo": "mouse",
-"quando": "2026-11-11T02:57:11+00:00"
-},
-{
-"post": "cjpromos/78751",
-"titulo": "WWE 2K25 PlayStation 4 R$ 149 https://link.amazon/B0gQiWZtn",
-"achado": 149.0,
-"shopee": 253.62,
-"tiktok": 186.59,
-"nota": 70,
-"alvo": "playstation",
-"quando": "2026-11-11T03:02:24+00:00"
-},
-{
-"post": "cjpromos/78762",
-"titulo": "Monitor Lg Oled UltraGear 27Gx704a-B 27\" 240Hz QuadHD 2K G-Sync Hdr R$ 3.088 Cupom: NOMELI",
-"achado": 3088.0,
-"shopee": 4513.04,
-"tiktok": 3770.73,
-"nota": 50,
-"alvo": "monitor",
-"quando": "2026-11-11T03:02:28+00:00"
-},
-{
-"post": "BenchPromos/28252",
-"titulo": "🔥 Notebook ASUS Vivobook 15 X1504MA-BQ091W Intel Core 5 320 8GB RAM 512GB SSD Windows 11 H",
-"achado": 2897.08,
-"shopee": 4236.35,
-"tiktok": 3537.9,
-"nota": 60,
-"alvo": "notebook",
-"quando": "2026-11-11T03:02:33+00:00"
-},
-{
-"post": "BenchPromos/28254",
-"titulo": "🔥 Notebook Predator Helios Neo 16 AI PHN16-73-76H8 Intel Core Ultra 7 255HX RTX 5070 32GB ",
-"achado": 10859.07,
-"shopee": 15775.46,
-"tiktok": 13247.65,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-11T03:02:38+00:00"
-},
-{
 "post": "BenchPromos/28255",
 "titulo": "⭐️ PARCELADO! ⭐️ 🔥 Notebook Lenovo LOQ 15IRX9 I5-13450HX RTX 3050 6GB 8GB RAM 512GB SSD Li",
 "achado": 4599.0,
@@ -1998,5 +1878,125 @@
 "nota": 60,
 "alvo": "notebook",
 "quando": "2026-11-11T04:34:09+00:00"
+},
+{
+"post": "cjpromos/78952",
+"titulo": "Placa de Vídeo Biostar AMD Radeon RX 580 2048SP, 8GB, GDDR5, 256 Bit, R$ 676 Resgate todos",
+"achado": 676.0,
+"shopee": 1017.39,
+"tiktok": 829.27,
+"nota": 45,
+"alvo": "radeon",
+"quando": "2026-11-11T04:39:22+00:00"
+},
+{
+"post": "cjpromos/78954",
+"titulo": "Smart Tv Tcl C6k 55\" Qd-Mini Led 4K 55C6k R$ 2.619 https://link.amazon/B08HRiaT0",
+"achado": 2619.0,
+"shopee": 3833.33,
+"tiktok": 3198.78,
+"nota": 65,
+"alvo": "tv ",
+"quando": "2026-11-11T04:39:27+00:00"
+},
+{
+"post": "Fraguas84Oficial/45800",
+"titulo": "🚀 Notebook Positivo Vision R15 AMD ® Ryzen 5-5500U Linux 16GB RAM 256GB SSD Full HD 15.6” ",
+"achado": 2769.0,
+"shopee": 4050.72,
+"tiktok": 3381.71,
+"nota": 45,
+"alvo": "ryzen",
+"quando": "2026-11-11T04:39:31+00:00"
+},
+{
+"post": "souzzatechpromos/270477",
+"titulo": "🚨 Notebook Gamer Acer Nitro V 15 com Placa NVIDIA GeForce RTX 4050 6GB Processador AMD Ryz",
+"achado": 5579.0,
+"shopee": 8123.19,
+"tiktok": 6808.54,
+"nota": 45,
+"alvo": "rtx",
+"quando": "2026-11-11T04:39:36+00:00"
+},
+{
+"post": "souzzatechpromos/270478",
+"titulo": "🚨 Notebook Gamer Lenovo LOQ IRX9 15.6\" 144Hz - Intel Core i5-13450HX, 8GB RAM, 512GB SSD, ",
+"achado": 4549.0,
+"shopee": 6630.43,
+"tiktok": 5552.44,
+"nota": 55,
+"alvo": "rtx",
+"quando": "2026-11-11T04:39:41+00:00"
+},
+{
+"post": "souzzatechpromos/270481",
+"titulo": "🚨 Smart TV 65\" LG 4K Ultra HD QNED Mini LED 65QNED70BSA WebOS 26 2026 💵 R$ 3.428,76 🎟 Cupo",
+"achado": 3428.76,
+"shopee": 5006.9,
+"tiktok": 4186.29,
+"nota": 60,
+"alvo": "tv ",
+"quando": "2026-11-11T04:39:45+00:00"
+},
+{
+"post": "souzzatechpromos/270482",
+"titulo": "🚨 Notebook Asus Vivobook Go E1504ga Intel Core i3 N305 8gb Ram 512gb Ssd Windows 11 Tela 1",
+"achado": 2519.0,
+"shopee": 3688.41,
+"tiktok": 3076.83,
+"nota": 60,
+"alvo": "notebook",
+"quando": "2026-11-11T04:39:50+00:00"
+},
+{
+"post": "souzzatechpromos/270484",
+"titulo": "🚨 Smartphone Motorola Moto G77 5G - 256GB 8GB RAM + 16GB RAM Boost camera 108MP Ultra-Pixe",
+"achado": 1419.0,
+"shopee": 2094.2,
+"tiktok": 1735.37,
+"nota": 75,
+"alvo": "smartphone",
+"quando": "2026-11-11T04:39:54+00:00"
+},
+{
+"post": "souzzatechpromos/270487",
+"titulo": "🚨 Notebook Acer Aspire Go 15 AG15-71P-753G, Intel Core i7-13620H, 8GB RAM, SSD 256GB, 15.6",
+"achado": 2899.0,
+"shopee": 4239.13,
+"tiktok": 3540.24,
+"nota": 60,
+"alvo": "notebook",
+"quando": "2026-11-11T04:39:59+00:00"
+},
+{
+"post": "souzzatechpromos/270488",
+"titulo": "🚨 Placa de Vídeo Biostar AMD Radeon RX 580 2048SP, 8GB, GDDR5, 256 Bit, VA5815RQ82 💵 Por R",
+"achado": 676.0,
+"shopee": 1017.39,
+"tiktok": 829.27,
+"nota": 50,
+"alvo": "radeon",
+"quando": "2026-11-11T04:40:04+00:00"
+},
+{
+"post": "souzzatechpromos/270490",
+"titulo": "🚨 Monitor Gamer ASUS TUF 23.8\", Full HD, 260Hz, 0.3ms, Fast IPS, VRR, G-Sync Comp, HDR10, ",
+"achado": 594.0,
+"shopee": 898.55,
+"tiktok": 729.27,
+"nota": 50,
+"alvo": "monitor",
+"quando": "2026-11-11T04:40:08+00:00"
+},
+{
+"post": "souzzatechpromos/270491",
+"titulo": "🚨 HUAWEI Pura 80 12GB+256GB | Smartphone | 12GB+256GB | Câmera Ultra Chroma XMAGE | Preto ",
+"achado": 2313.0,
+"shopee": 3389.86,
+"tiktok": 2825.61,
+"nota": 65,
+"alvo": "smartphone",
+"quando": "2026-11-11T04:40:13+00:00"
 }
 ]
