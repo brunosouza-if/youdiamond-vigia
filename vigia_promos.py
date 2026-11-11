@@ -66,7 +66,7 @@ for c in CANAIS:
         if post in visto: continue
         precos = _precos(t)
         for k, mx in ALVOS.items():
-            if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume", low) and precos and precos[0] <= mx:
+            if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume|roupa|feminin|masculin|camis|blusa|vestido|calça|calca|bermuda|jaqueta|moletom|cueca|legging|saia|suti|sapato|tênis|tenis|sandália|sandalia|chinelo", low) and precos and precos[0] <= mx:
                 m = precos[0]; vs = _venda(m,'shopee'); vt = _venda(m,'tiktok'); n = _nota(k, low, m, mx, vs)
                 br = lambda v: f"R$ {v:,.2f}".replace(",","X").replace(".",",").replace("X",".")
                 msg = "\n".join([html.escape(" ".join(t.split())[:90]),
