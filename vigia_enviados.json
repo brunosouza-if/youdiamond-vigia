@@ -1,95 +1,5 @@
 [
 {
-"post": "cjpromos/79583",
-"titulo": "Placa de Vídeo PNY RTX 5060 Ti OC NVIDIA Geforce, 8GB GDDR7, Dual-Fan, Ray Tracing, DLSS 4",
-"achado": 3079.0,
-"shopee": 4500.0,
-"tiktok": 3759.76,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:33:59+00:00"
-},
-{
-"post": "cjpromos/79584",
-"titulo": "Placa de Vídeo PNY NVIDIA GeForce RTX 5060 Ti, 8GB, GDDR7, 128-bits, Dual Fan, PCIe 5.0 VC",
-"achado": 3084.0,
-"shopee": 4507.25,
-"tiktok": 3765.85,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:34:04+00:00"
-},
-{
-"post": "cjpromos/79585",
-"titulo": "Placa de Vídeo RTX 5060 Ti EAGLEOC ICE 8G Gigabyte NVIDIA GeForce, 8GB GDDR7, 128bits, DLS",
-"achado": 3084.0,
-"shopee": 4507.25,
-"tiktok": 3765.85,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:34:08+00:00"
-},
-{
-"post": "cjpromos/79586",
-"titulo": "Placa de Vídeo ASRock RX 9070 Challenger AMD Radeon, LED, 16GB, GDDR6, FidelityFX, RDNA 90",
-"achado": 4663.0,
-"shopee": 6795.65,
-"tiktok": 5691.46,
-"nota": 50,
-"alvo": "radeon",
-"quando": "2026-11-12T01:34:13+00:00"
-},
-{
-"post": "cjpromos/79587",
-"titulo": "Placa de Vídeo Zotac RTX 5070 NVIDIA Geforce, 12GB 192 BITS GDDR7 TWIN EDGE OC ZT-B50700H-",
-"achado": 5103.0,
-"shopee": 7433.33,
-"tiktok": 6228.05,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:34:17+00:00"
-},
-{
-"post": "cjpromos/79588",
-"titulo": "Placa de Video Palit RTX 5070 INFINITY 3 NVIDIA GeForce, 12GB, GDDR7, 192bit 3-DP e HDMI N",
-"achado": 5015.0,
-"shopee": 7305.8,
-"tiktok": 6120.73,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:34:22+00:00"
-},
-{
-"post": "cjpromos/79589",
-"titulo": "Placa de Vídeo Gainward Ghost RTX 5060 NVIDIA GeForce, 8GB GDDR7, 128-bit NE75060019P1-GB2",
-"achado": 2630.0,
-"shopee": 3849.28,
-"tiktok": 3212.2,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:34:26+00:00"
-},
-{
-"post": "cjpromos/79590",
-"titulo": "Controle Sony DualSense PS5, Sem Fio, Gray Camuflado 1000039944 R$ 291 Cupom: DUALSENSACIO",
-"achado": 291.0,
-"shopee": 459.42,
-"tiktok": 359.76,
-"nota": 70,
-"alvo": "ps5",
-"quando": "2026-11-12T01:39:39+00:00"
-},
-{
-"post": "LaPromotion/117382",
-"titulo": "🔥 Placa De Vídeo Husky Alpha RTX 3060 TI, NVIDIA, 8GB, GDDR6, 256-Bit, HDMI, DisplayPort H",
-"achado": 1935.0,
-"shopee": 2842.03,
-"tiktok": 2364.63,
-"nota": 50,
-"alvo": "rtx",
-"quando": "2026-11-12T01:39:43+00:00"
-},
-{
 "post": "LaPromotion/117383",
 "titulo": "🔥 Placa de Vídeo Gainward Ghost RTX 5060 NVIDIA GeForce, 8GB GDDR7, 128-bit NE75060019P1-G",
 "achado": 2630.0,
@@ -1998,5 +1908,95 @@
 "nota": 70,
 "alvo": "ps5",
 "quando": "2026-11-12T12:34:01+00:00"
+},
+{
+"post": "cjpromos/79626",
+"titulo": "Smartphone Samsung Galaxy A27 5G 128GB 6GB, Super Amoled 6.7'', Câmera Tripla 50MP Selfie ",
+"achado": 1079.0,
+"shopee": 1601.45,
+"tiktok": 1320.73,
+"nota": 75,
+"alvo": "smartphone",
+"quando": "2026-11-12T12:39:13+00:00"
+},
+{
+"post": "souzzatechpromos/274563",
+"titulo": "🚨 Monitor LG UltraWide - Tela IPS de 29\", 21:9, HDR10, sRGB 99%, 100Hz, Preto- 29WQ500B 💵 ",
+"achado": 881.0,
+"shopee": 1314.49,
+"tiktok": 1079.27,
+"nota": 50,
+"alvo": "monitor",
+"quando": "2026-11-12T12:39:18+00:00"
+},
+{
+"post": "souzzatechpromos/274569",
+"titulo": "🚨 Celular Smartphone Realme 16x 5g 256gb 8gb Ram (+16gb virtual ram boost) Dual Sim Nfc Me",
+"achado": 1159.1,
+"shopee": 1717.54,
+"tiktok": 1418.41,
+"nota": 70,
+"alvo": "celular",
+"quando": "2026-11-12T12:39:22+00:00"
+},
+{
+"post": "souzzatechpromos/274570",
+"titulo": "🚨 Smartphone Jovi Y19s 256gb, 4GB + 4GB RAM Expansível, Câmera 50mp, Bateria 5500mah, Carr",
+"achado": 710.37,
+"shopee": 1067.2,
+"tiktok": 871.18,
+"nota": 70,
+"alvo": "smartphone",
+"quando": "2026-11-12T12:39:27+00:00"
+},
+{
+"post": "souzzatechpromos/274571",
+"titulo": "🚨 The Blood Of Dawnwalker Steelbook Edition Ps5 Midia Fisica 💵 R$ 341,96 🎟 Cupom: OFERTAST",
+"achado": 341.96,
+"shopee": 533.28,
+"tiktok": 421.9,
+"nota": 60,
+"alvo": "ps5",
+"quando": "2026-11-12T12:39:31+00:00"
+},
+{
+"post": "souzzatechpromos/274572",
+"titulo": "🚨 Silent Hill F Day One Edition Ps5 Midia Fisica 💵 R$ 187,93 🎟 Cupom: OFERTASTECH https://",
+"achado": 187.93,
+"shopee": 310.04,
+"tiktok": 234.06,
+"nota": 70,
+"alvo": "ps5",
+"quando": "2026-11-12T12:39:36+00:00"
+},
+{
+"post": "souzzatechpromos/274576",
+"titulo": "🚨 Apple iPhone 15 (128 GB) - Azul 💵 R$ 3.619 no Pix 🎟 Cupom: OFERTASTECH https://meli.la/2",
+"achado": 3619.0,
+"shopee": 5282.61,
+"tiktok": 4418.29,
+"nota": 70,
+"alvo": "iphone",
+"quando": "2026-11-12T12:39:41+00:00"
+},
+{
+"post": "souzzatechpromos/274577",
+"titulo": "🚨 Notebook Acer Aspire Go 15 Ag15-51p-37dq Intel Core I3-1305u 15.3 8gb 256gb Ssd Linux 💵 ",
+"achado": 2479.0,
+"shopee": 3630.43,
+"tiktok": 3028.05,
+"nota": 60,
+"alvo": "notebook",
+"quando": "2026-11-12T12:39:45+00:00"
+},
+{
+"post": "souzzatechpromos/274578",
+"titulo": "🚨 Monitor Gamer Aoc 23,8 Full Hd 144hz Agon G50 0,5ms Preto Bivolt 💵 R$ 512 no Pix 🎟 Cupom",
+"achado": 512.0,
+"shopee": 779.71,
+"tiktok": 629.27,
+"nota": 50,
+"alvo": "monitor",
+"quando": "2026-11-12T12:39:50+00:00"
 }
 ]
