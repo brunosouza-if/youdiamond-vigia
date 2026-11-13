@@ -23,6 +23,7 @@ def destino(short):
         if "shopee.com.br" in u.netloc and re.search(r"/\d+/\d+$", u.path): return f"https://shopee.com.br{u.path}"
     except Exception: pass
     return None
+FECHOS = ["", "", "", "⏳ Enquanto durar.", "Corre que estoque some.", "Achei bom, vale olhar.", "Oferta de hoje.", "Confere antes que mude."]
 def meu_link(url):
     return "https://s.shopee.com.br/an_redir?origin_link=" + urllib.parse.quote(url, safe="") + f"&affiliate_id={AFILIADO}&sub_id=canal"
 def preco(t):
@@ -52,7 +53,8 @@ for c in CANAIS:
         linhas = [f"🔥 {html.escape(titulo)}"]
         if p: linhas.append(f"💰 R$ {p}")
         if cup: linhas.append(f"🎟 Cupom: <code>{cup.group(1)}</code>")
-        linhas += [f"👉 {meu_link(url)}", "Preço e cupom do momento, podem acabar."]
+        linhas.append(f"👉 {meu_link(url)}")
+        if FECHOS[sum(map(ord, post)) % len(FECHOS)]: linhas.append(FECHOS[sum(map(ord, post)) % len(FECHOS)])
         if not tok: print("\n".join(linhas)); postados += 1; continue
         try:
             get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id": DESTINO, "text": "\n".join(linhas), "parse_mode": "HTML"}).encode())
