@@ -34,7 +34,7 @@ for c in CANAIS:
     if postados >= MAX_POR_RODADA: break
     try: pg = get(f"https://t.me/s/{c}")
     except Exception: continue
-    for bloco in re.findall(r'data-post="[^"]+".*?(?=data-post="|$)', pg, re.S)[-8:]:
+    for bloco in re.findall(r'data-post="[^"]+".*?(?=data-post="|$)', pg, re.S)[-15:]:
         post = re.search(r'data-post="([^"]+)"', bloco).group(1)
         if post in visto or postados >= MAX_POR_RODADA: continue
         visto.add(post)
