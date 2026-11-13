@@ -1,10 +1,10 @@
 # Vigia publico: le os mesmos canais de promo (t.me/s/<canal>), pega o link Shopee de cada post, troca pelo link de afiliado do Bruno
 # (an_redir, sem API) e posta no canal @jarvis_promocoes com titulo e preco proprios. Roda dentro do mesmo run do vigia (cada 5 min).
 import os, re, json, html, time, urllib.request, urllib.parse
-CANAIS = ["cjpromos","BenchPromos","Fraguas84Oficial","juaocupons","LaPromotion","souzzatechpromos"]
+CANAIS = ["cjpromos","BenchPromos","Fraguas84Oficial","juaocupons","LaPromotion","souzzatechpromos","promocoesdodia","Promobit"]
 AFILIADO = "18309050191"
 DESTINO = "@jarvis_promocoes"
-MAX_POR_RODADA = 6
+MAX_POR_RODADA = 10
 BARRA = r"travesseiro|len[cç]ol|toalha|fronha|edredom|cobertor|cama|colch|panela|frigideira|tapete|cortina|sof[aá]|mesa|cadeira|talher|prato|copo|garrafa t|utens|decora|organizador|vassoura|rodo|lavanderia|cozinha|banheiro|jogo de"
 SINAL = r"r$|cupom|off\b|%|de r\$|por r\$|menor pre|relâmpago|relampago|desconto|frete gr"
 VISTO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vigia_publico_visto.json")
