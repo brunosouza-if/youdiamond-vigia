@@ -23,7 +23,15 @@ def destino(short):
         if "shopee.com.br" in u.netloc and re.search(r"/\d+/\d+$", u.path): return f"https://shopee.com.br{u.path}"
     except Exception: pass
     return None
-FECHOS = ["", "", "", "⏳ Enquanto durar.", "Corre que estoque some.", "Achei bom, vale olhar.", "Oferta de hoje.", "Confere antes que mude."]
+_A = ["Olha esse preço", "Achei bom demais", "Isso aqui compensa", "Tá valendo muito", "Bateu a promo", "Gostei dessa", "Esse eu pegaria", "Promo boa essa", "Raro ver assim", "Caiu o preço", "Não deixa passar", "Tá barato mesmo"]
+_B = ["enquanto tem estoque", "antes que acabe", "o cupom pode sair a qualquer hora", "corre que some rápido", "o preço pode subir de novo", "vale conferir agora", "hoje tá assim", "não sei até quando fica", "aproveita que tá liberado", "o pessoal tá levando tudo"]
+_E = ["🔥", "⚡", "🏃", "👀", "💥", "🛒", "😍", "⏳", "🤑", "✨", "🚨", "👏"]
+import random as _r
+def fecho(post):
+    r = _r.Random(post)
+    if r.random() < 0.3: return ""
+    f = r.choice(_A) + (", " + r.choice(_B) if r.random() < 0.7 else "") + r.choice(["!", ".", "!!", " 👇", ""])
+    return (r.choice(_E) + " " + f) if r.random() < 0.7 else f + " " + r.choice(_E)
 def meu_link(url):
     return "https://s.shopee.com.br/an_redir?origin_link=" + urllib.parse.quote(url, safe="") + f"&affiliate_id={AFILIADO}&sub_id=canal"
 def preco(t):
@@ -54,7 +62,7 @@ for c in CANAIS:
         if p: linhas.append(f"💰 R$ {p}")
         if cup: linhas.append(f"🎟 Cupom: <code>{cup.group(1)}</code>")
         linhas.append(f"👉 {meu_link(url)}")
-        if FECHOS[sum(map(ord, post)) % len(FECHOS)]: linhas.append(FECHOS[sum(map(ord, post)) % len(FECHOS)])
+        if fecho(post): linhas.append(fecho(post))
         if not tok: print("\n".join(linhas)); postados += 1; continue
         try:
             get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id": DESTINO, "text": "\n".join(linhas), "parse_mode": "HTML"}).encode())
