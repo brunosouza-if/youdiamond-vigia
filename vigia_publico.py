@@ -52,7 +52,7 @@ for c in CANAIS:
         linhas = [f"🔥 {html.escape(titulo)}"]
         if p: linhas.append(f"💰 R$ {p}")
         if cup: linhas.append(f"🎟 Cupom: <code>{cup.group(1)}</code>")
-        linhas += [f"👉 {meu_link(url)}", "Link de afiliado: posso ganhar comissão. Preço e cupom do momento, podem acabar."]
+        linhas += [f"👉 {meu_link(url)}", "Preço e cupom do momento, podem acabar."]
         if not tok: print("\n".join(linhas)); postados += 1; continue
         try:
             get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id": DESTINO, "text": "\n".join(linhas), "parse_mode": "HTML"}).encode())
