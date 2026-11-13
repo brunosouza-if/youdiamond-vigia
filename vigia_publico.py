@@ -6,7 +6,7 @@ AFILIADO = "18309050191"
 DESTINO = "@jarvis_promocoes"
 MAX_POR_RODADA = 6
 BARRA = r"travesseiro|len[cç]ol|toalha|fronha|edredom|cobertor|cama|colch|panela|frigideira|tapete|cortina|sof[aá]|mesa|cadeira|talher|prato|copo|garrafa t|utens|decora|organizador|vassoura|rodo|lavanderia|cozinha|banheiro|jogo de"
-SINAL = r"cupom|off\b|%|de r\$|por r\$|menor pre|relâmpago|relampago|desconto|frete gr"
+SINAL = r"r$|cupom|off\b|%|de r\$|por r\$|menor pre|relâmpago|relampago|desconto|frete gr"
 VISTO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vigia_publico_visto.json")
 visto = set(json.load(open(VISTO))) if os.path.exists(VISTO) else set()
 class _Sem(urllib.request.HTTPRedirectHandler):
