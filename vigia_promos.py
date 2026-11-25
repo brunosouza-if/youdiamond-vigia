@@ -21,7 +21,7 @@ def get(u, data=None): return urllib.request.urlopen(urllib.request.Request(u, d
 LUCRO=0.12
 def _venda(custo, canal):
     if canal=="shopee":
-        extra = 0.05 if datetime.date.today() <= datetime.date(2026,12,1) else 0   # Campanha de Destaque ate 01/12
+        extra = (0.05 if datetime.date.today() <= datetime.date(2026,12,1) else 0) + 0.03   # Campanha de Destaque ate 01/12
         faixas=[(0,79.99,.20+extra,4.5),(80,99.99,.14+extra,16),(100,199.99,.14+extra,20),(200,1e9,.14+extra,26)]
     else:
         faixas=[(0,49.99,.10,4),(50,1e9,.06,4)]
