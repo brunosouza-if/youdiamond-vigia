@@ -64,7 +64,7 @@ for c in CANAIS:
     for post, txt in re.findall(r'data-post="([^"]+)".*?tgme_widget_message_text[^>]*>(.*?)</div>', pg, re.S):
         t = html.unescape(re.sub(r"<[^>]+>", " ", txt)); low = t.lower()
         if post in visto: continue
-        if re.search(r"placa de v|\brtx\b|\bgtx\b|radeon|celular|smartphone|iphone|galaxy|redmi|\bpoco\b|moto g|televis|smart tv|\broku\b|toshiba|\btv (?!box)", low): continue  # Bruno 24/11: sem placa de video nem celular
+        if re.search(r"placa de v|\brtx\b|\bgtx\b|radeon|celular|smartphone|iphone|galaxy|redmi|\bpoco\b|moto g|televis|smart tv|\broku\b|toshiba|\btv (?!box)", low) and "tcl" not in low: continue  # Bruno 24/11: sem placa de video nem celular
         precos = _precos(t)
         for k, mx in ALVOS.items():
             if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume|roupa|feminin|masculin|camis|blusa|vestido|calça|calca|bermuda|jaqueta|moletom|cueca|legging|saia|suti|sapato|tênis|tenis|sandália|sandalia|chinelo", low) and precos and precos[0] <= mx:
@@ -94,5 +94,8 @@ for post,a,info in achados[:12]:
     try:
         get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id":chat,"text":a,"parse_mode":"HTML"}).encode())
         visto.add(post); json.dump(sorted(visto), open(VISTO,"w")); _registrar_envio(info); time.sleep(4)
+        if "tcl" in a.lower() and re.search(r"65", a):  # Bruno 24/11: TCL 65 pol avisa no privado
+            try: get(f"https://api.telegram.org/bot{tok}/sendMessage", urllib.parse.urlencode({"chat_id":868917098,"text":"TCL 65 em promo: "+a,"parse_mode":"HTML"}).encode())
+            except Exception as e: print("erro privado", e)
     except Exception as e:
         print("erro envio", e); break
