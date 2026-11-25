@@ -64,7 +64,7 @@ for c in CANAIS:
     for post, txt in re.findall(r'data-post="([^"]+)".*?tgme_widget_message_text[^>]*>(.*?)</div>', pg, re.S):
         t = html.unescape(re.sub(r"<[^>]+>", " ", txt)); low = t.lower()
         if post in visto: continue
-        if re.search(r"placa de v|\brtx\b|\bgtx\b|radeon|celular|smartphone|iphone|galaxy|redmi|\bpoco\b|moto g|espelho|notebook|tablet|\bipad|televis|smart tv|\broku\b|toshiba|\btv (?!box)", low) and "tcl" not in low: continue  # Bruno 24/11: sem placa de video nem celular
+        if re.search(r"placa de v|\brtx\b|\bgtx\b|radeon|celular|smartphone|iphone|galaxy|redmi|\bpoco\b|moto g|(?<!para )(?<!de )(?<!em )(?<!pra )\bjogos?\b|steam|\bpsn\b|gift card|game pass|eshop|epic games|xbox live|cd key|mídia física|midia fisica|espelho|notebook|tablet|\bipad|televis|smart tv|\broku\b|toshiba|\btv (?!box)", low) and "tcl" not in low: continue  # Bruno 24/11: sem placa de video nem celular
         precos = _precos(t)
         for k, mx in ALVOS.items():
             if re.search(r"\b"+re.escape(k)+r"s?\b", low) and not re.search(r"controle de |hidratante|facial|creme|shampoo|perfume|roupa|feminin|masculin|camis|blusa|vestido|calça|calca|bermuda|jaqueta|moletom|cueca|legging|saia|suti|sapato|tênis|tenis|sandália|sandalia|chinelo", low) and precos and precos[0] <= mx:
