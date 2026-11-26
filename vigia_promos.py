@@ -139,7 +139,8 @@ def _registrar_envio(info):
     info = dict(info, quando=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"))
     env = (env + [info])[-ENVIADOS_MAX:]
     json.dump(env, open(ENVIADOS, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-for post,a,info in achados[:12]:
+achados = sorted([x for x in achados if x[2].get('nota',0) >= 65], key=lambda x: -x[2].get('nota',0))  # Bruno 26/11: menos enxurrada, so nota 65+
+for post,a,info in achados[:4]:
     if not (tok and chat): print(a); continue
     try:
         _img = _IMG.get(post.split(":",1)[-1]) if post.startswith("aliexpress:") else None
