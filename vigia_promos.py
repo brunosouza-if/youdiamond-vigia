@@ -67,7 +67,7 @@ for c in CANAIS:
         t = html.unescape(re.sub(r"<[^>]+>", " ", txt)); low = t.lower()
         if post in visto: continue
         if re.search(r"(?<!suporte de )(?<!suporte para )monitor(es)?|nintendo|switch|placa de v|\brtx\b|\bgtx\b|radeon|celular|smartphone|iphone|galaxy|redmi|\bpoco\b|moto g|(?<!para )(?<!de )(?<!em )(?<!pra )\bjogos?\b|steam|\bpsn\b|gift card|game pass|eshop|epic games|xbox live|cd key|mídia física|midia fisica|espelho|notebook|tablet|\bipad|televis|smart tv|\broku\b|toshiba|\btv (?!box)", low) and "tcl" not in low: continue  # Bruno 24/11: sem placa de video nem celular
-        if re.search(r"playstation|bps ?[45]b|bps plusb", low) and not re.search(r"controle|dualsense|headset|fone|console|suporte|carregador|base|cabo", low): continue  # Bruno 26/11: sem jogo de PS4/PS5
+        if re.search(r"playstation|\bps ?[45]\b|\bps plus\b", low) and not re.search(r"controle|dualsense|headset|fone|console|suporte|carregador|base|cabo", low): continue  # Bruno 26/11: sem jogo de PS4/PS5
         precos = _precos(t)
         for k, mx in ALVOS.items():
             if k in GATE_BOM and not re.search(BOA_MARCA, low): continue  # Bruno 24/11: fone so de marca boa
